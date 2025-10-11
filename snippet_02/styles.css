@@ -1,0 +1,73 @@
+/* =====================================================
+   Description: Styling for Golden Retriever page
+   Resources used:
+   - MDN CSS documentation: https://developer.mozilla.org/en-US/docs/Web/CSS
+   - W3Schools CSS guide: https://www.w3schools.com/css/
+   ===================================================== */
+
+/* Change the default font and basic layout */
+body {
+	font-family: 'Verdana', sans-serif;
+	line-height: 1.4;
+	background-color: #fafafa;
+	color: #333;
+	padding: 20px;
+}
+
+/* Add spacing between elements */
+h1, h2, h3, h4, p, figure {
+	margin-bottom: 20px;
+}
+
+/* Limit paragraph width and make it responsive */
+p {
+	max-width: 600px;
+	width: 90%;
+}
+
+/* In-text link styling */
+a {
+	color: #0066cc;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover and focus states for links */
+a:hover,
+a:focus {
+	color: #ff9900;
+	text-decoration: underline;
+}
+
+/* Image styling */
+img {
+	display: block;
+	margin: 10px 0;
+	border-radius: 8px;
+	transition: transform 0.3s ease, border 0.3s ease;
+}
+
+/* Hover/focus effect for linked images (future use) */
+a img:hover,
+a img:focus {
+	transform: scale(1.05);
+	border: 2px solid #ff9900;
+}
+
+/* Caption styling */
+figcaption {
+	font-size: 0.9rem;
+	color: #555;
+	text-align: center;
+	margin-top: 5px;
+}
+
+/* Highlight the headings with a light orange-cream background */
+h2, h3 {
+  background-color: #fff2e0; /* light orange-cream tone */
+  padding: 3px 7px;
+  border-radius: 3px;
+  display: inline-block;
+  color: #b35900; /* dark orange for better readability */
+}
