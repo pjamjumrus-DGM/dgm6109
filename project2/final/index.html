@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project 2-5 Final</title>
+  <!-- Place your project number in place of the # above-->
+</head>
+
+<body>
+  <h2>Gift Card Purchase System</h2>
+
+  <p>Which store do you want to buy a gift card for?</p>
+  <select id="storeSelect">
+    <option value="sepharoah">Sepharoah</option>
+    <option value="wallgrinds">Wallgrinds</option>
+    <option value="tacohut">Taco Hut</option>
+  </select>
+
+  <p>How much do you want to put on the gift card?</p>
+  <input 
+    id="cardAmount" 
+    type="number" 
+    step="0.01" 
+    min="1" 
+    placeholder="e.g. 25.00"
+  />
+
+  <p>Please enter your ZIP code:</p>
+  <input 
+    id="zipCode" 
+    type="text" 
+    maxlength="5" 
+    placeholder="5 digits"
+  />
+
+  <br><br>
+  <button id="submit">Submit Form</button>
+  <button id="reset" hidden>Start Over</button>
+  <div id="output"></div>
+
+  <hr/>
+  <a href="flowchart.pdf" target="_blank">View my flowchart</a>
+
+  <!-- Scripts -->
+  <script src="output.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
