@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pattamaporn Jamjumrus Lab #5</title>
+    <script src="libraries/d3.min.js"></script>
+    <script src="libraries/polygon.js"></script>
+
+    <!-- Include classmate scripts here -->
+    <script src="elements/butterfly.js"></script>
+    <script src="elements/fish.js"></script>
+    <script src="elements/rabbit.js"></script>
+    <script src="elements/rooster.js"></script>
+</head>
+
+<body>
+    <!-- Main Bold Heading -->
+    <h1><strong>Lab Homework - Week 05</strong></h1>
+
+    <!-- Selection 1 -->
+    <h3><strong>Selection 1</strong></h3>
+    <p>Select the first element for your drawing:
+        <select id="choice1">
+            <option value="butterfly">butterfly</option>
+            <option value="fish">fish</option>
+            <option value="rabbit">rabbit</option>
+            <option value="rooster">rooster</option>
+        </select>
+    </p>
+    <p>Position your first element: x:<input type="number" id="x1" value="100">, y:<input type="number" id="y1" value="100"></p>
+
+    <!-- Selection 2 -->
+    <h3><strong>Selection 2</strong></h3>
+    <p>Select the second element for your drawing:
+        <select id="choice2">
+            <option value="butterfly">butterfly</option>
+            <option value="fish">fish</option>
+            <option value="rabbit">rabbit</option>
+            <option value="rooster">rooster</option>
+        </select>
+    </p>
+    <p>Position your second element: x:<input type="number" id="x2" value="300">, y:<input type="number" id="y2" value="100"></p>
+
+    <!-- Selection 3 -->
+    <h3><strong>Selection 3</strong></h3>
+    <p>Select the third element for your drawing:
+        <select id="choice3">
+            <option value="butterfly">butterfly</option>
+            <option value="fish">fish</option>
+            <option value="rabbit">rabbit</option>
+            <option value="rooster">rooster</option>
+        </select>
+    </p>
+    <p>Position your third element: x:<input type="number" id="x3" value="100">, y:<input type="number" id="y3" value="300"></p>
+
+    <!-- Selection 4 -->
+    <h3><strong>Selection 4</strong></h3>
+    <p>Select the fourth element for your drawing:
+        <select id="choice4">
+            <option value="butterfly">butterfly</option>
+            <option value="fish">fish</option>
+            <option value="rabbit">rabbit</option>
+            <option value="rooster">rooster</option>
+        </select>
+    </p>
+    <p>Position your fourth element: x:<input type="number" id="x4" value="300">, y:<input type="number" id="y4" value="300"></p>
+
+    <!-- Origin Option -->
+    <p>Show origin points: 
+        <select id="origins">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </p>
+
+    <button id="action">Draw!</button>
+    <div id="canvas"></div>
+
+</body>
+<script src="main.js"></script>
+</html>
