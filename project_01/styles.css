@@ -1,0 +1,221 @@
+/* ===== MAPLE CIRCLE WEBSITE ===== */
+/* =====================================================
+   Description: Styling for Maple Circle Style Guide
+   Author: Pattamaporn Jamjumrus
+   Resources used:
+   - MDN CSS documentation: https://developer.mozilla.org/en-US/docs/Web/CSS
+   - W3Schools CSS guide: https://www.w3schools.com/css/
+   - Instructor's lecture examples
+   - Color inspiration: https://coolors.co/
+   ===================================================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #222;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+/* ===== HEADER / NAVIGATION ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e03b24;
+  padding: 8px 20px;
+  flex-wrap: nowrap;
+}
+
+.logo { 
+  height: 120px; /* create by myself */
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-btn {
+  color: #e03b24;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #e03b24;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e03b24;
+  color: #fff;
+}
+
+/* ===== HEADINGS ===== */
+.headings {
+  text-align: center;
+  margin: 30px 0;
+}
+.headings h1 {
+  font-size: 2em;
+  color: #e03b24;
+}
+.headings h2 {
+  color: #333;
+}
+.headings h3 {
+  color: #666;
+}
+.headings h4 {
+  color: #999;
+  font-style: italic;
+}
+
+/* ===== MAIN IMAGES SECTION ===== */
+.main-container {
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.image-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.image-box {
+  width: 280px;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.box-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.caption {
+  background-color: #000;
+  color: #fff;
+  padding: 6px 0;
+  font-weight: bold;
+}
+
+select {
+  width: 90%;
+  margin: 10px 0 15px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+/* ===== ABOUT / DETAILS ===== */
+.details {
+  margin-top: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.details h2 {
+  letter-spacing: 5px;
+}
+
+.details p {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.details a {
+  color: #e03b24;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.event-btn {
+  background-color: white;
+  color: #e03b24;
+  border: 2px solid #e03b24;
+}
+
+.event-btn:hover {
+  background-color: #ffe6e0;
+}
+
+.free-btn {
+  background-color: #e03b24;
+  color: white;
+}
+
+.free-btn:hover {
+  background-color: #b92e1b;
+}
+
+/* ===== INPUT FIELD ===== */
+.contact {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact input {
+  width: 60%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
