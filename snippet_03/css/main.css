@@ -1,0 +1,113 @@
+/* =====================================================
+   Main styling for Maple Circle website
+   Author: Pattamaporn Jamjumrus
+   Resources:
+   - MDN CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+   - W3Schools CSS Reference: https://www.w3schools.com/css/
+   ===================================================== */
+
+body { font-family: Arial, Helvetica, sans-serif; margin:0; background:#fff; color:#222; }
+
+/* Header / Navbar */
+.navbar {
+  display:flex; justify-content:space-between; align-items:center;
+  background:#fff; border-bottom:2px solid #e03b24; padding:8px 20px; flex-wrap:wrap;
+}
+
+.logo { height:100px; width:auto; }
+/* ===== NAVBAR MENU ITEMS ===== */
+nav ul {
+  list-style: none;        /* Remove bullets */
+  display: flex;           /* Arrange menu items in a row */
+  gap: 25px;               /* Increase space between each menu item */
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;         /* Allow menu items to wrap on small screens */
+}
+
+.nav-btn {
+  color: #e03b24;          /* Red text */
+  font-weight: bold;
+  text-decoration: none;    /* Remove underline */
+  padding: 6px 12px;        /* Add padding around text */
+  border: none;             /* Remove border */
+  border-radius: 0;         /* No rounded corners */
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  color: #fff;              /* White text on hover */
+  background-color: #e67e22; /* Orange background on hover */
+}
+/* Menu buttons: red text, no border, hover orange */
+.nav-btn {
+  color:#e03b24; font-weight:bold; text-decoration:none;
+  border:none; padding:6px 10px; border-radius:0; transition:0.3s;
+}
+.nav-btn:hover { color:#fff; background:#e67e22; }
+
+/* Headings */
+.headings { text-align:center; margin:20px 10px; }
+.headings h1 { font-size:2em; color:#e03b24; }
+.headings h2 { font-size:1.5em; color:#333; }
+.headings h3 { font-size:1.2em; color:#666; }
+.headings h4 { font-size:1em; color:#999; font-style:italic; }
+
+/* Image Box */
+.image-box { border:none; text-align:center; background:#fff; margin:0 auto; max-width:280px; }
+.box-image { width:100%; height:180px; object-fit:cover; }
+.caption { background:#000; color:#fff; padding:6px 0; font-weight:bold; }
+
+/* Buttons */
+.buttons { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+button { padding:12px 25px; border-radius:30px; cursor:pointer; font-weight:bold; border:none; }
+.event-btn { background:#fff; color:#e03b24; border:2px solid #e03b24; }
+.event-btn:hover { background:#ffe6e0; }
+.free-btn { background:#e03b24; color:#fff; }
+.free-btn:hover { background:#b92e1b; }
+
+/* Contact Input */
+.contact { text-align:center; margin-top:40px; }
+.contact input { width:60%; padding:8px; border-radius:5px; border:1px solid #ccc; }
+
+/* Footer */
+footer { background:#f2f2f2; text-align:center; padding:15px 0; margin-top:50px; font-size:0.9rem; }
+
+/* Remove bullets from lists */
+ul, ol { list-style:none; padding-left:0; margin-left:0; }
+
+/* Details section */
+.details {
+  margin-top:50px; max-width:700px; margin-left:auto; margin-right:auto; text-align:center;
+}
+.networking-link { color:#e03b24; font-weight:bold; text-decoration:none; }
+.networking-link:hover { text-decoration:underline; }
+
+/* =====================================================
+   MEDIA QUERIES
+   Resources: MDN Responsive Design
+   https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
+   ===================================================== */
+
+/* Mobile (320px - 480px) */
+@media (max-width:480px) {
+  .navbar { flex-direction: column; align-items:flex-start; }
+  .logo { height:80px; }
+  .headings h1 { font-size:1.5em; }
+  .image-box { max-width:90%; margin-bottom:15px; }
+  .contact input { width:90%; }
+}
+
+/* Desktop (768px - 1024px) */
+@media (min-width:768px) and (max-width:1024px) {
+  .logo { height:100px; }
+  .headings h1 { font-size:2em; }
+  .image-box { max-width:250px; margin-bottom:20px; }
+}
+
+/* Large Screens (1440px - 1920px) */
+@media (min-width:1440px) {
+  .logo { height:120px; }
+  .headings h1 { font-size:3em; }
+  .image-box { max-width:280px; margin-bottom:25px; }
+}
