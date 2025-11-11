@@ -1,0 +1,62 @@
+/* ==============================
+   Basic Styles for Sketch Page
+   ============================== */
+
+body {
+  font-family: 'Verdana', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 30px;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  color: #1a1a1a;
+  font-size: 1.8rem;
+}
+
+h2 {
+  text-align: center;
+  color: #555;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 750px;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: #003366;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffcc33;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffb300;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #666;
+}
