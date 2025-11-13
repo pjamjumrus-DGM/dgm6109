@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2, p {
+  margin: 10px 0;
+}
+
+ul { /*selects all <ul> elements (unordered lists).*/
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 20px; /* space between boxes */
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+li a { /*selects all <li> elements (list items).*/
+  display: block;
+  background-color: #a0d8f1; /* pastel blue */
+  color: #000;
+  text-decoration: none;
+  padding: 30px 50px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+li a:hover {
+  background-color: #0077cc; /* blue on hover */
+  color: #fff; /* text turns white */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
