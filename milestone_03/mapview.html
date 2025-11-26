@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAPLE CIRCLE – MAP VIEW</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER / MENU ===== -->
+<header class="navbar">
+  <img src="img/logo.jpeg" alt="Maple Circle Logo" class="logo">
+
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">HOME</a></li>
+      <li><a href="event.html" class="nav-btn">EVENT</a></li>
+      <li><a href="mapview.html" class="nav-btn active">MAP VIEW</a></li>
+      <li><a href="contact.html" class="nav-btn">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="map-main" id="map-top">
+
+  <h1 class="map-title">MAP VIEW</h1>
+
+  <!-- layout: map + location buttons -->
+    <section class="map-layout">
+
+  <!-- big map image + จุดกลม -->
+  <div class="map-panel">
+    <img src="img/bigmap.jpeg" alt="Map overview" class="map-image">
+
+    <!-- จุดกลมแต่ละสถานที่ -->
+    <a href="#map-coffee"   class="map-pin pin-coffee"   aria-label="Coffee Shop"></a>
+    <a href="#map-park"     class="map-pin pin-park"     aria-label="Walking Park"></a>
+    <a href="#map-reading"  class="map-pin pin-reading"  aria-label="Reading"></a>
+    <a href="#map-bike"     class="map-pin pin-bike"     aria-label="Beach Bike"></a>
+    <a href="#map-shopping" class="map-pin pin-shopping" aria-label="Shopping"></a>
+    <a href="#map-photo"    class="map-pin pin-photo"    aria-label="Photograph"></a>
+  </div>
+
+  <!-- location buttons -->
+  <aside class="map-sidebar">
+    <h2 class="map-subtitle">Select a location</h2>
+
+    <a href="#map-coffee"   class="map-location-btn btn-coffee">Coffee Shop</a>
+    <a href="#map-park"     class="map-location-btn btn-park">Walking Park</a>
+    <a href="#map-reading"  class="map-location-btn btn-reading">Reading</a>
+    <a href="#map-bike"     class="map-location-btn btn-bike">Beach Bike</a>
+    <a href="#map-shopping" class="map-location-btn btn-shopping">Shopping</a>
+    <a href="#map-photo"    class="map-location-btn btn-photo">Photograph</a>
+  </aside>
+
+</section>
+</main>
+
+<!-- ========== POPUPS FOR EACH LOCATION (ใช้ modal เดิม) ========== -->
+
+<!-- COFFEE SHOP MAP POPUP -->
+<section id="map-coffee" class="modal">
+  <div class="modal-box">
+    <a href="#map-top" class="modal-close">&times;</a>
+
+    <div class="modal-left">
+      <img src="img/coffee.jpg" alt="Coffee shop" class="modal-img">
+    </div>
+
+    <div class="modal-right">
+      <h2>COFFEE SHOP</h2>
+      <p class="modal-date">Near Expo Line</p>
+
+      <div class="pill-row">
+        <span class="pill pill-brown">1 hour</span>
+        <span class="pill pill-brown-light">FREE!</span>
+        <span class="pill pill-brown">10 DEC · 1PM</span>
+      </div>
+
+      <p class="modal-label">Detail</p>
+      <p class="modal-desc">
+        Cozy cafe close to Expo Line station. Perfect for meeting new friends and
+        sharing stories over a cup of coffee.
+      </p>
+
+      <a href="https://maps.app.goo.gl/we2F3AwWwsWf8f7b6" target="_blank" class="btn-primary">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- WALKING PARK MAP POPUP -->
+<section id="map-park" class="modal">
+  <div class="modal-box">
+    <a href="#map-top" class="modal-close">&times;</a>
+
+    <div class="modal-left">
+      <img src="img/walking-park.jpg" alt="Walking park" class="modal-img">
+    </div>
+
+    <div class="modal-right">
+      <h2>WALKING PARK</h2>
+      <p class="modal-date">Denman st (bus)</p>
+
+      <div class="pill-row">
+        <span class="pill pill-brown">30 mins</span>
+        <span class="pill pill-brown-light">FREE!</span>
+        <span class="pill pill-brown">12 DEC · 1PM</span>
+      </div>
+
+      <p class="modal-label">Detail</p>
+      <p class="modal-desc">
+        Scenic park by the water with city views. Great for a relaxed walk and casual chat.
+      </p>
+
+      <a href="https://maps.app.goo.gl/efW3rfq3E3TEUVVZ8" target="_blank" class="btn-primary">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEACH BIKE MAP POPUP -->
+<section id="map-bike" class="modal">
+  <div class="modal-box">
+    <a href="#map-top" class="modal-close">&times;</a>
+
+    <div class="modal-left">
+      <img src="img/beach-bike.jpeg" alt="Beach bike" class="modal-img">
+    </div>
+
+    <div class="modal-right">
+      <h2>BEACH BIKE</h2>
+      <p class="modal-date">Denman st (bus)</p>
+
+      <div class="pill-row">
+        <span class="pill pill-brown">1 hour</span>
+        <span class="pill pill-brown-light">FREE!</span>
+        <span class="pill pill-brown">11 DEC · 3PM</span>
+      </div>
+
+      <p class="modal-label">Detail</p>
+      <p class="modal-desc">
+        Bike route along the beach with sunset view. Perfect for light cycling and photos.
+      </p>
+
+      <a href="https://maps.app.goo.gl/Ph9gX5qc2w66q5PB9" target="_blank" class="btn-primary">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- SHOPPING MAP POPUP -->
+<section id="map-shopping" class="modal">
+  <div class="modal-box">
+    <a href="#map-top" class="modal-close">&times;</a>
+
+    <div class="modal-left">
+      <img src="img/shopping.jpg" alt="Shopping" class="modal-img">
+    </div>
+
+    <div class="modal-right">
+      <h2>SHOPPING</h2>
+      <p class="modal-date">Granville st</p>
+
+      <div class="pill-row">
+        <span class="pill pill-brown">30 mins</span>
+        <span class="pill pill-brown-light">FREE!</span>
+        <span class="pill pill-brown">13 DEC · 2PM</span>
+      </div>
+
+      <p class="modal-label">Detail</p>
+      <p class="modal-desc">
+        Shopping street with cafés and stores. Good spot to explore with new friends.
+      </p>
+
+      <a href="https://maps.app.goo.gl/F4KtG8vJYSajxtvn9" target="_blank" class="btn-primary">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- READING MAP POPUP -->
+<section id="map-reading" class="modal">
+  <div class="modal-box">
+    <a href="#map-top" class="modal-close">&times;</a>
+
+    <div class="modal-left">
+      <img src="img/reading.jpg" alt="Reading area" class="modal-img">
+    </div>
+
+    <div class="modal-right">
+      <h2>READING</h2>
+      <p class="modal-date">Homer st (bus)</p>
+
+      <div class="pill-row">
+        <span class="pill pill-brown">45 mins</span>
+        <span class="pill pill-brown-light">FREE!</span>
+        <span class="pill pill-brown">14 DEC · 1PM</span>
+      </div>
+
+      <p class="modal-label">Detail</p>
+      <p class="modal-desc">
+        Quiet indoor space ideal for reading, studying, or small group discussions.
+      </p>
+
+      <a href="https://maps.app.goo.gl/ex45PPSY8VJYQwuw5" target="_blank" class="btn-primary">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPH MAP POPUP -->
+<section id="map-photo" class="modal">
+  <div class="modal-box">
+    <a href="#map-top" class="modal-close">&times;</a>
+
+    <div class="modal-left">
+      <img src="img/photograph.jpg" alt="Photograph" class="modal-img">
+    </div>
+
+    <div class="modal-right">
+      <h2>PHOTOGRAPH</h2>
+      <p class="modal-date">Denman st (bus)</p>
+
+      <div class="pill-row">
+        <span class="pill pill-brown">1 hour</span>
+        <span class="pill pill-brown-light">FREE!</span>
+        <span class="pill pill-brown">15 DEC · 1PM</span>
+      </div>
+
+      <p class="modal-label">Detail</p>
+      <p class="modal-desc">
+        Waterfront spot with skyline views. Great for taking photos and hanging out.
+      </p>
+
+      <a href="https://maps.app.goo.gl/7u71dcUFAXQC4Nez8" target="_blank" class="btn-primary">Open in Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Maple Circle. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
