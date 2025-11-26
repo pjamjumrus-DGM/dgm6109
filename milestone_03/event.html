@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAPLECIRCLE – EVENT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="event-page">
+
+  <!-- ===== HEADER / MENU ===== -->
+  <header class="navbar">
+    <img src="img/logo.jpeg" alt="Maple Circle Logo" class="logo">
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-btn">HOME</a></li>
+        <li><a href="event.html" class="nav-btn active">EVENT</a></li>
+        <li><a href="mapview.html" class="nav-btn">MAP VIEW</a></li>
+        <li><a href="contact.html" class="nav-btn">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== EVENT LIST (ภาพรวม) ===== -->
+  <main class="event-main" id="event-top">
+
+    <h1 class="event-title">UPCOMING EVENTS</h1>
+
+    <section class="event-grid">
+
+      <!-- COFFEE SHOP -->
+      <article class="event-card">
+        <a href="#popup-coffee" class="event-link">
+          <img src="img/coffee.jpg" alt="Coffee shop" class="event-img">
+          <div class="event-text">
+            <h2>COFFEE SHOP</h2>
+            <p class="event-date">10 DEC · 1PM</p>
+            <p class="event-meta">1 hour · FREE · Expo line</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- BEACH BIKE -->
+      <article class="event-card">
+        <a href="#popup-bike" class="event-link">
+          <img src="img/beach-bike.jpeg" alt="Beach bike" class="event-img">
+          <div class="event-text">
+            <h2>BEACH BIKE</h2>
+            <p class="event-date">11 DEC · 3PM</p>
+            <p class="event-meta">1 hour · FREE · Denman st (bus)</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- WALKING PARK -->
+      <article class="event-card">
+        <a href="#popup-park" class="event-link">
+          <img src="img/walking-park.jpg" alt="Walking park" class="event-img">
+          <div class="event-text">
+            <h2>WALKING PARK</h2>
+            <p class="event-date">12 DEC · 1PM</p>
+            <p class="event-meta">30 mins · FREE · Denman st (bus)</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- SHOPPING -->
+      <article class="event-card">
+        <a href="#popup-shopping" class="event-link">
+          <img src="img/shopping.jpg" alt="Shopping" class="event-img">
+          <div class="event-text">
+            <h2>SHOPPING</h2>
+            <p class="event-date">13 DEC · 2PM</p>
+            <p class="event-meta">30 mins · FREE · Granville st</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- READING -->
+      <article class="event-card">
+        <a href="#popup-reading" class="event-link">
+          <img src="img/reading.jpg" alt="Reading" class="event-img">
+          <div class="event-text">
+            <h2>READING</h2>
+            <p class="event-date">14 DEC · 1PM</p>
+            <p class="event-meta">45 mins · FREE · Homer st (bus)</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- PHOTOGRAPH -->
+      <article class="event-card">
+        <a href="#popup-photo" class="event-link">
+          <img src="img/photograph.jpg" alt="Photograph" class="event-img">
+          <div class="event-text">
+            <h2>PHOTOGRAPH</h2>
+            <p class="event-date">15 DEC · 1PM</p>
+            <p class="event-meta">1 hour · FREE · Denman st (bus)</p>
+          </div>
+        </a>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- ========== POPUP DETAILS  ========== -->
+
+  <!-- COFFEE SHOP DETAIL -->
+  <section id="popup-coffee" class="modal">
+    <div class="modal-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <div class="modal-left">
+        <img src="img/coffee.jpg" alt="Coffee shop" class="modal-img">
+      </div>
+
+      <div class="modal-right">
+        <h2>COFFEE SHOP</h2>
+        <p class="modal-date">10 DEC · 1PM</p>
+
+        <div class="pill-row">
+          <span class="pill pill-brown">1 hour</span>
+          <span class="pill pill-brown-light">FREE!</span>
+          <span class="pill pill-brown">Expo line</span>
+        </div>
+
+        <p class="modal-label">Number of people</p>
+        <div class="people-box">5 – 10</div>
+
+        <p class="modal-label">Description</p>
+        <p class="modal-desc">
+          Join us for a delightful session to share your passion for all things coffee,
+          and exchange captivating stories with like-minded friends. Let’s make connections
+          over a perfect cup!
+        </p>
+
+        <a href="#joined-coffee" class="btn-primary">Join this event!</a>
+      </div>
+    </div>
+  </section>
+
+       <!-- WALKING PARK DETAIL -->
+  <section id="popup-park" class="modal">
+    <div class="modal-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <div class="modal-left">
+        <img src="img/walking-park.jpg" alt="Walking park" class="modal-img">
+      </div>
+
+      <div class="modal-right">
+        <h2>WALKING PARK</h2>
+        <p class="modal-date">12 DEC · 1PM</p>
+
+        <div class="pill-row">
+          <span class="pill pill-brown">30 mins</span>
+          <span class="pill pill-brown-light">FREE!</span>
+          <span class="pill pill-brown">Denman st (bus)</span>
+        </div>
+
+        <p class="modal-label">Number of people</p>
+        <div class="people-box">5 – 10</div>
+
+        <p class="modal-label">Description</p>
+        <p class="modal-desc">
+          Enjoy a refreshing walk in the park, surrounded by nature and city views.
+          This is a relaxed event to chat, take photos, and get some fresh air together.
+        </p>
+
+        <a href="#joined-coffee" class="btn-primary">Join this event!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEACH BIKE DETAIL -->
+  <section id="popup-bike" class="modal">
+    <div class="modal-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <div class="modal-left">
+        <img src="img/beach-bike.jpeg" alt="Beach bike" class="modal-img">
+      </div>
+
+      <div class="modal-right">
+        <h2>BEACH BIKE</h2>
+        <p class="modal-date">11 DEC · 3PM</p>
+
+        <div class="pill-row">
+          <span class="pill pill-brown">1 hour</span>
+          <span class="pill pill-brown-light">FREE!</span>
+          <span class="pill pill-brown">Denman st (bus)</span>
+        </div>
+
+        <p class="modal-label">Number of people</p>
+        <div class="people-box">3 – 8</div>
+
+        <p class="modal-label">Description</p>
+        <p class="modal-desc">
+          Ride along the beach side, watch the sunset, and enjoy the ocean breeze.
+          Perfect for casual cyclists who want to explore and make new friends.
+        </p>
+
+        <a href="#joined-coffee" class="btn-primary">Join this event!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- READING DETAIL -->
+  <section id="popup-reading" class="modal">
+    <div class="modal-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <div class="modal-left">
+        <img src="img/reading.jpg" alt="Reading corner" class="modal-img">
+      </div>
+
+      <div class="modal-right">
+        <h2>READING</h2>
+        <p class="modal-date">14 DEC · 1PM</p>
+
+        <div class="pill-row">
+          <span class="pill pill-brown">45 mins</span>
+          <span class="pill pill-brown-light">FREE!</span>
+          <span class="pill pill-brown">Homer st (bus)</span>
+        </div>
+
+        <p class="modal-label">Number of people</p>
+        <div class="people-box">4 – 10</div>
+
+        <p class="modal-label">Description</p>
+        <p class="modal-desc">
+          A cozy reading session where you can bring your favorite book,
+          share recommendations, and study together in a calm environment.
+        </p>
+
+        <a href="#joined-coffee" class="btn-primary">Join this event!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOGRAPH DETAIL -->
+  <section id="popup-photo" class="modal">
+    <div class="modal-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <div class="modal-left">
+        <img src="img/photograph.jpg" alt="Photograph" class="modal-img">
+      </div>
+
+      <div class="modal-right">
+        <h2>PHOTOGRAPH</h2>
+        <p class="modal-date">15 DEC · 1PM</p>
+
+        <div class="pill-row">
+          <span class="pill pill-brown">1 hour</span>
+          <span class="pill pill-brown-light">FREE!</span>
+          <span class="pill pill-brown">Denman st (bus)</span>
+        </div>
+
+        <p class="modal-label">Number of people</p>
+        <div class="people-box">5 – 12</div>
+
+        <p class="modal-label">Description</p>
+        <p class="modal-desc">
+          Capture the city’s skyline and waterfront views together.
+          This event is open to all levels – from phone photographers to camera lovers.
+        </p>
+
+        <a href="#joined-coffee" class="btn-primary">Join this event!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPPING DETAIL -->
+  <section id="popup-shopping" class="modal">
+    <div class="modal-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <div class="modal-left">
+        <img src="img/shopping.jpg" alt="Shopping" class="modal-img">
+      </div>
+
+      <div class="modal-right">
+        <h2>SHOPPING</h2>
+        <p class="modal-date">13 DEC · 2PM</p>
+
+        <div class="pill-row">
+          <span class="pill pill-brown">30 mins</span>
+          <span class="pill pill-brown-light">FREE!</span>
+          <span class="pill pill-brown">Granville st</span>
+        </div>
+
+        <p class="modal-label">Number of people</p>
+        <div class="people-box">3 – 8</div>
+
+        <p class="modal-label">Description</p>
+        <p class="modal-desc">
+          Explore shops together, hunt for good deals, and share your favorite
+          local spots at the mall. Great for casual hangouts and small talks.
+        </p>
+
+        <a href="#joined-coffee" class="btn-primary">Join this event!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPUP THANKS (after click Join) ===== -->
+  <section id="joined-coffee" class="modal">
+    <div class="thanks-box">
+      <a href="#event-top" class="modal-close">&times;</a>
+
+      <img src="img/party.png" alt="Party icon" class="thanks-icon">
+      <p class="thanks-text">Your has been joined this event!</p>
+
+      <a href="#event-top" class="btn-primary btn-full">Thanks!</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Maple Circle. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
