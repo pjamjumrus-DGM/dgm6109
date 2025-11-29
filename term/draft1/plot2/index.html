@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Relationship Between Outdoor Time and Daily Reflection</title>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f8f8; 
+      margin: 0;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #container {
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 20px;
+      background: #ffffff;     
+      border-radius: 12px;       
+      box-shadow: 0 0 15px rgba(0,0,0,0.1); 
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0;
+      color: #222;
+      line-height: 1.2em;
+      font-size: 30px;
+      white-space: nowrap; 
+    }
+
+    .author {
+      text-align: center;        
+      margin: 5px 0 10px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    p {
+      text-align: left;
+      max-width: 800px;
+      margin: 5px auto 16px auto;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.4em;
+    }
+
+    #canvas {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <h1>
+      Relationship Between<br>
+      Time Spent Outside and Daily Reflection
+    </h1>
+
+      <p class="author">Pattamaporn Jamjumrus</p>
+    <p>
+      <strong>Hypothesis:</strong> The longer the hours I spend outside, the higher my daily reflection score tends to be.  
+      <br>Bubble size = meals purchased; color = mood (0–5 scale from frustrated to enjoyable).
+    </p>
+
+    <div id="canvas"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

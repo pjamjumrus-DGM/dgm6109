@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Relationship Between Purchased meals / Location visited / Mood outside</title>
+
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="main.js" defer></script>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #container {
+      margin: 0 auto;
+      max-width: 1000px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin: 10px 0;
+      color: #222;
+      font-size: 30px;
+      line-height: 1.2em;
+    }
+
+    .author {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .hypo {
+      text-align: left;
+      max-width: 800px;
+      margin: 10px auto;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.4em;
+    }
+
+    h2.subtitle {
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    /* Center calendar + legend */
+    #calendar-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    /* keep SVG clean */
+    #calendar svg,
+    #legend svg {
+      display: block;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      color: #0077cc;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="container">
+
+    <h1>
+      Relationship Between <br>
+      Purchased meals / Location visited / Mood outside
+    </h1>
+
+    <p class="author">Pattamaporn Jamjumrus</p>
+
+    <p class="hypo">
+      <strong>Hypothesis:</strong>
+      As the number of location visited decreases, the number of purchased meals also
+      decreases, <br>while the mood outside tends to increase.
+    </p>
+
+    <h2 class="subtitle">23 September – 21 October : Data Collection</h2>
+
+    <!-- calendar + legend -->
+    <div id="calendar-wrapper">
+      <div id="calendar"></div>
+      <div id="legend"></div>
+    </div>
+
+  </div>
+</body>
+</html>
