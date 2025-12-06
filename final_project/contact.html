@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAPLE CIRCLE – CONTACT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER / MENU ===== -->
+<header class="navbar">
+  <img src="img/logo.jpeg" alt="Maple Circle Logo" class="logo">
+
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">HOME</a></li>
+      <li><a href="event.html" class="nav-btn">EVENT</a></li>
+      <li><a href="mapview.html" class="nav-btn">MAP VIEW</a></li>
+      <li><a href="contact.html" class="nav-btn active">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== REVIEW SECTION (TOP) ===== -->
+<section class="review-new">
+ 
+  <h1 class="contact-title">CONTACT &amp; REVIEW</h1>
+
+  <div class="review-item">
+    <img src="img/review1.jpg" class="review-photo">
+    <div class="review-box">
+      <p class="review-text">
+        "Super fun and a great workout! The bike ride along the beach with beautiful views 
+        and easy conversations <br> was the perfect form of relaxation. I wish we could do this 
+        every single week!"
+      </p>
+      <p class="review-name">- Marry Jane -</p>
+    </div>
+  </div>
+
+  <div class="review-item">
+    <img src="img/review2.jpg" class="review-photo">
+    <div class="review-box">
+      <p class="review-text">
+        "This truly sparked my inspiration! Getting out to new locations and exchanging 
+        photography knowledge <br> with other shooters gave me amazing new perspectives and 
+        brilliant techniques. Thank you for the wonderful friendship."
+      </p>
+      <p class="review-name">- Jennie Wilson -</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== MAIN CONTACT CONTENT ===== -->
+<main class="contact-main">
+
+  <!-- layout 2 : info + form -->
+  <section class="contact-layout">
+
+    <!-- left contact / social -->
+    <div class="contact-info">
+      <h2 class="contact-subtitle">Stay connected with Maple Circle</h2>
+      <p class="contact-text">
+        Have questions about events, safety, or how to join our community?
+        Reach out to us anytime, we’re happy to help!
+      </p>
+
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>maple.circle@gmail.com</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Instagram</h3>
+        <p>@maple.circle</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Location</h3>
+        <p>Downtown Vancouver, BC, Canada</p>
+      </div>
+    </div>
+
+    <!-- right contact : form contact -->
+    <form class="contact-form">
+  <div class="form-row">
+    <label for="name">Your name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name">
+  </div>
+
+  <div class="form-row">
+    <label for="email-contact">Email</label>
+    <input type="email" id="email-contact" name="email" placeholder="Enter your email">
+  </div>
+
+  <div class="form-row">
+    <label for="topic">Topic</label>
+    <input type="text" id="topic" name="topic" placeholder="What is your message about?">
+  </div>
+
+  <div class="form-row">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="Write your message here"></textarea>
+  </div>
+
+  <a href="#joined-contact" class="btn-primary btn-full">Send Message</a>
+</form>
+    </div>
+
+  </section>
+
+  <!-- ===== POPUP THANKS for CONTACT ===== -->
+<section id="joined-contact" class="modal">
+  <div class="thanks-box">
+    <a href="#contact-top" class="modal-close">&times;</a>
+
+    <img src="img/party.png" alt="Party icon" class="thanks-icon">
+    <p class="thanks-text">You have been join this event!</p>
+
+    <a href="#contact-top" class="btn-primary btn-full">Thanks!</a>
+  </div>
+</section>
+
+ <!-- REVIEW / FEEDBACK SECTION -->
+<section class="review-section">
+  <h2 class="review-title">Share your experience</h2>
+  <p class="review-text">
+    Tell us how your Maple Circle event went. Your feedback helps us create
+    safer and more meaningful meetups for everyone.
+  </p>
+
+  <form class="review-form">
+    <label for="review-name">Nickname</label>
+    <input type="text" id="review-name" placeholder="How should we call you?">
+
+    <label for="review-message">Your review</label>
+    <textarea id="review-message" rows="3" placeholder="Write your review"></textarea>
+
+    <!-- popup -->
+    <a href="#review-popup" class="outline-btn review-btn">Submit Review</a>
+  </form>
+</section>
+
+<!-- REVIEW THANKS POPUP -->
+<section id="review-popup" class="modal">
+  <div class="thanks-box">
+    <a href="#contact-top" class="modal-close">&times;</a>
+
+    <img src="img/party.png" alt="Celebration Icon" class="thanks-icon">
+    
+    <p class="thanks-text">You have been join this event!</p>
+
+    <a href="#contact-top" class="btn-primary btn-full">Thanks!</a>
+  </div>
+</section>
+
+
+<!-- ===== HOME BOTTOM SECTION (LOGO + NEWSLETTER) ===== -->
+<footer class="home-footer">
+  <div class="home-footer-inner">
+   
+    <div class="home-footer-left">
+      <img src="img/logo.jpeg" alt="Maple Circle Logo" class="bottom-logo">
+      <p class="bottom-copy">© 2025 Maple Circle. All rights reserved.</p>
+    </div>
+
+    <div class="home-footer-right">
+      <p class="footer-news-title">Join our newsletter</p>
+
+      <div class="footer-news-form">
+        <input
+          type="email"
+          class="footer-news-input"
+          placeholder="Enter your email address"
+          required
+        >
+
+        <a href="#thanks" class="footer-news-btn">SUBSCRIBE</a>
+      </div>
+    </div>
+  </div>
+  <div id="thanks" class="modal">
+  <div class="thanks-box">
+    <a href="#" class="modal-close">&times;</a>
+
+    <img src="img/party.png" alt="Party icon" class="thanks-icon">
+    <p class="thanks-text">Thank you for subscribe!</p>
+
+    <a href="#" class="btn-primary btn-full">Back to homepage</a>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
