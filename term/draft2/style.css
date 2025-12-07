@@ -1,0 +1,60 @@
+
+/* ---------- text panels under calendar ---------- */
+#text-summary {
+  margin-top: 35px;
+  text-align: left;
+}
+
+.info-card {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 18px 24px;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* make only the body text bigger */
+.info-card p {
+  font-size: 20px;       
+}  
+
+.info-intro {
+  background: #fde3cf;
+  border: 1px solid #f3b48a;
+}
+
+.info-design {
+  background: #fef3ea;
+  border: 1px solid #f1d3b2;
+}
+
+.info-conclusion {
+  background: #e6f1ff;
+  border: 1px solid #b8cceb;
+}
+
+.info-title-orange {
+  color: #b2451b;
+}
+
+.info-title-blue {
+  color: #1f4f96;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.blue-highlight {
+  color: #1f5fb5;
+  font-weight: bold;
+}
+
+
+
+
+
