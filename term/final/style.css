@@ -1,0 +1,160 @@
+
+/* ============================================================
+   Global page layout and typography
+   This section defines the overall look and feel of the page:
+   fonts, background, and the main container around the content.
+============================================================ */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Main page title that sits above the visualization */
+h1 {
+  margin: 10px 0;
+  color: #222;
+  font-size: 30px;
+  line-height: 1.2em;
+}
+
+/* Author line below the main title */
+.author {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Hypothesis text block under the author name */
+.hypo {
+  text-align: left;
+  max-width: 800px;
+  margin: 10px auto;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* Subheading used for the data collection date range */
+h2.subtitle {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #333;
+}
+
+/* ============================================================
+   Calendar + legend layout
+   This section controls how the SVG visualization is placed,
+   including the row of day labels and the legend text.
+============================================================ */
+
+/* Place the calendar SVG and legend next to each other */
+#calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* SVG elements behave like blocks (no extra spacing) */
+#calendar svg,
+#legend svg {
+  display: block;
+}
+
+/* Day-of-week labels above the calendar grid (SUN, MON, etc.) */
+.day-label {
+  font-size: 14px;
+  fill: #444;        /* This applies to SVG text colour */
+}
+
+/* Titles used inside the legend for each section label */
+.legend-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ============================================================
+   Text summary cards under the calendar
+   These cards explain the hypothesis, design choices, and
+   the conclusions in normal paragraphs.
+============================================================ */
+
+/* Container that holds all explanatory text cards */
+#text-summary {
+  margin-top: 35px;
+  text-align: left;     /* Left-align text for easier reading */
+}
+
+/* Generic card styling: shared by all three info cards */
+.info-card {
+  max-width: 900px;
+  margin: 18px auto;
+  padding: 18px 24px;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+/* Body text inside the cards is slightly larger for readability */
+.info-card p {
+  font-size: 20px;
+  line-height: 1.6em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Intro card: warm orange tone for the data description */
+.info-intro {
+  background: #fde3cf;          /* light orange */
+  border: 1px solid #f3b48a;
+}
+
+/* Design card: soft cream tone for design explanation */
+.info-design {
+  background: #fef3ea;          /* cream */
+  border: 1px solid #f1d3b2;
+}
+
+/* Conclusion card: pale blue tone for analysis and findings */
+.info-conclusion {
+  background: #e6f1ff;          /* light blue */
+  border: 1px solid #b8cceb;
+}
+
+/* Accent colours for section titles inside the cards */
+.info-title-orange {
+  color: #b2451b;
+}
+
+.info-title-blue {
+  color: #1f4f96;
+}
+
+/* Heading used at the top of a card (e.g., Calendar data collection) */
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Blue highlight used to emphasise certain phrases in the text */
+.blue-highlight {
+  color: #1f5fb5;
+  font-weight: bold;
+}

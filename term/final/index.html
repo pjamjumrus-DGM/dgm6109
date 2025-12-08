@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!--Page title-->
+  <title>Pattamaporn Jamjumrus</title>
+
+  <!--D3-->
+  <script src="d3.min.js"></script>
+
+  <!-- Main JavaScript for the visualization -->
+  <script src="main.js" defer></script>
+
+  <!--Page styling-->
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #container {
+      margin: 0 auto;
+      max-width: 1000px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin: 10px 0;
+      color: #222;
+      font-size: 30px;
+      line-height: 1.2em;
+    }
+
+    .author {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .hypo {
+      text-align: left;
+      max-width: 800px;
+      margin: 10px auto;
+      color: #444;
+      font-size: 18px;
+      line-height: 1.6em;
+    }
+
+    h2.subtitle {
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    /* Place the calendar and legend side by side in the center */
+    #calendar-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    /* Make sure the SVGs behave like block elements */
+    #calendar svg,
+    #legend svg {
+      display: block;
+    }
+
+    /* ---------- text panels under calendar ---------- */
+    #text-summary {
+      margin-top: 35px;
+      text-align: left; /* left-align text inside the cards */
+    }
+
+    .info-card {
+      max-width: 900px;
+      margin: 18px auto;
+      padding: 18px 24px;
+      border-radius: 18px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+
+    /* make only the body text bigger */
+    .info-card p {
+      font-size: 20px;
+    }
+
+    .info-intro {
+      background: #fde3cf;       /* light orange */
+      border: 1px solid #f3b48a;
+    }
+
+    .info-design {
+      background: #fef3ea;       /* cream */
+      border: 1px solid #f1d3b2;
+    }
+
+    .info-conclusion {
+      background: #e6f1ff;       /* light blue */
+      border: 1px solid #b8cceb;
+    }
+
+    .info-title-orange {
+      color: #b2451b;
+    }
+
+    .info-title-blue {
+      color: #1f4f96;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .blue-highlight {
+      color: #1f5fb5;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <!-- Main heading for the visualization -->
+    <h1>
+      Relationship Between <br>
+      Purchased Meals / Locations Visited / Mood Outside
+    </h1>
+
+    <p class="author">Pattamaporn Jamjumrus</p>
+
+    <!-- Statement of the hypothesis being tested -->
+    <p class="hypo">
+      <strong>Hypothesis:</strong>
+      As the number of locations visited decreases, the number of purchased meals also
+      decreases, while the mood outside tends to increase.
+    </p>
+
+    <h2 class="subtitle">23 September – 21 October : Data Collection</h2>
+
+    <!--
+      The SVG calendar and legend are both created by main.js.
+      This wrapper gives predictable area to draw into.
+    -->
+    <div id="calendar-wrapper">
+      <div id="calendar"></div>
+      <div id="legend"></div>
+    </div>
+
+    <!-- ========= Text panels under the calendar ========= -->
+    <div id="text-summary">
+
+      <!-- Card 1: Calendar table data collection -->
+      <div class="info-card info-intro">
+        <h3 class="info-title-orange">Calendar table data collection</h3>
+        <p>
+          <strong>Hypothesis:</strong> As the number of locations visited decreases, the number of purchased meals
+          <br>also decreases while mood outside tends to increase.
+        </p>
+        <p>
+          <strong>Data used:</strong>
+          LocationsVisited, MealsPurchased, MoodOutside
+        </p>
+        <p>
+          <strong>Representation:</strong>
+          Creative visual with no axes, using colors and patterns to show relational change.
+        </p>
+      </div>
+
+      <!-- Card 2: Design Details -->
+      <div class="info-card info-design">
+        <p>
+          <strong class="info-title-orange">Design Details:</strong>
+          This visualization is based on a daily recording format similar to a paper planner
+          or digital calendar. Using a calendar-like layout makes it easier to record data
+          consistently and to see day-to-day changes at a glance. It also matches how people
+          usually think about their routines, which helps when explaining the results.
+        </p>
+        <p>
+          <span class="blue-highlight">This visualization</span>
+          shows the same three variables on every single day, but in a compact visual code:
+          background colour for mood, hearts for locations, and patterns for purchased meals.
+        </p>
+      </div>
+
+      <!-- Card 3: Conclusion -->
+      <div class="info-card info-conclusion">
+        <p>
+          <strong class="info-title-blue">Conclusion:</strong>
+          The visualization of the calendar data shows a general consistency with the original
+          hypothesis. When more time is spent outside visiting multiple locations and spending
+          more money on meals, there tends to be a noticeable drop in the mood level for that day.
+          In other words, heavier spending and more movement outside generally line up with
+          lower mood ratings.
+        </p>
+        <p>
+          However, the visualization focuses on only three variables. Some days look “off”
+          because other factors, such as total time outside, overall fatigue, non-food expenses,
+          or personal context, are not included in the dataset but still influence mood.
+        </p>
+        <p>
+          Overall, the displayed trends match the hypothesis and reflect the patterns that
+          appear when looking across the entire month of recorded data.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
