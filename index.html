@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grounded on Land — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 4rem 5rem 6rem; position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--gold); }
+    .hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      line-height: 1; font-weight: 900; margin-bottom: 0.3rem;
+    }
+    .hero-title em { font-style: italic; font-weight: 300; color: var(--gold); display: block; }
+    .hero-subtitle {
+      font-size: 1.05rem; line-height: 1.7;
+      color: rgba(245,240,232,0.65);
+      max-width: 28rem; margin-bottom: 2.5rem; margin-top: 1.2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-visual {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--violet) 0%, #0e1a4a 40%, var(--teal) 100%);
+    }
+    .hero-circle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 65%; aspect-ratio: 1; border-radius: 50%;
+      border: 1px solid rgba(212,168,67,0.25);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    .hero-circle-2 { width: 45%; animation-delay: 1s; }
+    .hero-circle-3 { width: 25%; animation-delay: 2s; border-color: rgba(212,168,67,0.5); }
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+      50%       { transform: translate(-50%,-50%) scale(1.04); opacity: 1; }
+    }
+    .hero-text-overlay {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; z-index: 2;
+    }
+    .hero-text-overlay h2 {
+      font-family: 'Fraunces', serif; font-size: 2.5rem;
+      font-weight: 900; color: var(--cream); line-height: 1.1;
+    }
+    .hero-text-overlay p {
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-top: 0.5rem;
+    }
+    .hero-land-badge {
+      position: absolute; bottom: 2.5rem; right: 2.5rem;
+      background: rgba(10,10,18,0.7);
+      border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 4px; padding: 1rem 1.4rem;
+      backdrop-filter: blur(8px); z-index: 3;
+    }
+    .hero-land-badge small {
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); display: block; margin-bottom: 0.3rem;
+    }
+    .hero-land-badge p {
+      font-family: 'Fraunces', serif; font-size: 0.9rem;
+      font-style: italic; color: var(--cream); max-width: 18rem;
+    }
+
+    /* ── STATS ── */
+    .stats-strip {
+      background: var(--gold);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 2.2rem 2rem;
+      border-right: 1px solid rgba(10,10,18,0.15);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Fraunces', serif; font-size: 2.4rem;
+      font-weight: 900; color: var(--ink); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(10,10,18,0.65); margin-top: 0.3rem;
+    }
+
+    /* ── PROBLEM ── */
+    .problem {
+      padding: 7rem 6rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .section-body {
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(245,240,232,0.6); margin-bottom: 2rem;
+    }
+    .reality-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .reality-card {
+      display: flex; gap: 1.2rem; padding: 1.2rem 1.4rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px; transition: border-color 0.3s;
+    }
+    .reality-card:hover { border-color: rgba(212,168,67,0.3); }
+    .reality-icon {
+      width: 2.2rem; height: 2.2rem; flex-shrink: 0;
+      background: rgba(212,168,67,0.12); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+    .reality-card h4 { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem; }
+    .reality-card p { font-size: 0.82rem; color: rgba(245,240,232,0.5); line-height: 1.6; }
+
+    .vs-table {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px; overflow: hidden;
+    }
+    .vs-header { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .vs-col { padding: 1.2rem 1.5rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+    .vs-col.expect { background: rgba(255,255,255,0.05); color: rgba(245,240,232,0.5); }
+    .vs-col.reality { background: rgba(212,168,67,0.1); color: var(--gold); }
+    .vs-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .vs-row:last-child { border-bottom: none; }
+    .vs-cell {
+      padding: 0.9rem 1.5rem; font-size: 0.85rem; line-height: 1.5;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .vs-cell.expect { color: rgba(245,240,232,0.5); }
+    .vs-cell::before { content: "✗"; color: var(--rust); font-size: 0.7rem; flex-shrink: 0; }
+    .vs-cell.reality::before { content: "•"; color: var(--teal); }
+    .pull-quote {
+      margin-top: 1.5rem; padding: 1.2rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      font-family: 'Fraunces', serif; font-style: italic;
+      font-size: 1rem; color: rgba(245,240,232,0.7); line-height: 1.6;
+    }
+
+    /* ── SOLUTION ── */
+    .solution {
+      padding: 7rem 6rem;
+      background: linear-gradient(180deg, transparent, rgba(45,27,105,0.15), transparent);
+    }
+    .solution-header { text-align: center; max-width: 48rem; margin: 0 auto 4rem; }
+    .three-pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .pillar {
+      padding: 2.5rem; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px; position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .pillar.k::before { background: var(--gold); }
+    .pillar.c::before { background: var(--teal); }
+    .pillar.s::before { background: var(--rust); }
+    .pillar:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
+    .pillar-number {
+      font-family: 'Fraunces', serif; font-size: 3rem;
+      font-weight: 900; opacity: 0.1;
+      position: absolute; top: 1rem; right: 1.5rem; line-height: 1;
+    }
+    .pillar-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .pillar h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .pillar p { font-size: 0.85rem; color: rgba(245,240,232,0.55); line-height: 1.7; margin-bottom: 1.2rem; }
+    .pillar ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .pillar ul li { font-size: 0.8rem; color: rgba(245,240,232,0.45); padding-left: 1rem; position: relative; }
+    .pillar ul li::before { content: "—"; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; }
+
+    /* ── JOURNEY ── */
+    .journey { padding: 7rem 6rem; text-align: center; }
+    .journey-flow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; margin: 3rem 0; flex-wrap: wrap;
+    }
+    .journey-step { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; padding: 1.5rem 2rem; }
+    .step-dot {
+      width: 3rem; height: 3rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 700; font-family: 'Fraunces', serif;
+    }
+    .step-dot.before { background: rgba(201,74,42,0.2); border: 1px solid rgba(201,74,42,0.4); color: var(--rust); }
+    .step-dot.after  { background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.5); color: var(--gold); }
+    .step-label { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+    .step-value { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; }
+    .journey-arrow { font-size: 1.2rem; color: rgba(245,240,232,0.2); padding: 0 0.5rem; }
+    .journey-divider {
+      width: 3px; height: 4rem;
+      background: linear-gradient(180deg, var(--rust), var(--gold));
+      border-radius: 2px; margin: 0 3rem;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      margin: 0 6rem 7rem; padding: 4rem;
+      background: linear-gradient(135deg, var(--violet), #1a3a5c);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      border: 1px solid rgba(212,168,67,0.2);
+    }
+    .cta-band h2 {
+      font-family: 'Fraunces', serif; font-size: 2.2rem;
+      font-weight: 700; max-width: 30rem; line-height: 1.2;
+    }
+    .cta-band h2 em { font-style: italic; font-weight: 300; color: var(--gold); }
+    .cta-group { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-end; flex-shrink: 0; }
+    .cta-group small { font-size: 0.75rem; color: rgba(245,240,232,0.4); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2.5rem 6rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: var(--gold); }
+    .footer-note { font-size: 0.75rem; color: rgba(245,240,232,0.3); max-width: 35rem; line-height: 1.5; text-align: center; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(245,240,232,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left > * { animation: fadeUp 0.7s ease both; }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.35s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.45s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { height: 50vh; }
+      .hero-left { padding: 8rem 2rem 5rem; }
+      .problem { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+      .three-pillars { grid-template-columns: 1fr; }
+      .cta-band { flex-direction: column; margin: 0 2rem 5rem; text-align: center; }
+      .cta-group { align-items: center; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .solution, .journey { padding: 5rem 2rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Grounded <span>on Land</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="orientation.html">Orientation</a></li>
+    <li><a href="map.html">Land Map</a></li>
+    <li><a href="#">For Agencies</a></li>
+  </ul>
+  <a href="orientation.html" class="nav-cta">Begin Journey</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">A New Journey for International Students</div>
+    <h1 class="hero-title">Grounded<em>on Land</em></h1>
+    <p class="hero-subtitle">Before you arrive in Canada, learn the truth about the land, its history, and your place in it. Because you deserve to know.</p>
+    <div class="hero-actions">
+      <a href="orientation.html" class="btn-primary">Start Orientation →</a>
+      <a href="map.html" class="btn-secondary">Explore the Land</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-circle"></div>
+      <div class="hero-circle hero-circle-2"></div>
+      <div class="hero-circle hero-circle-3"></div>
+      <div class="hero-text-overlay">
+        <h2>Know Before<br>You Go</h2>
+        <p>Land · Community · Truth</p>
+      </div>
+    </div>
+    <div class="hero-land-badge">
+      <small>Land Acknowledgement</small>
+      <p>"Canada is built on the unceded territories of many Indigenous nations."</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-number">800K+</div><div class="stat-label">International Students in Canada</div></div>
+  <div class="stat-item"><div class="stat-number">60+</div><div class="stat-label">Indigenous Nations Represented</div></div>
+  <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Core Support Pillars</div></div>
+  <div class="stat-item"><div class="stat-number">0</div><div class="stat-label">Trusted Pre-Arrival Sources (currently)</div></div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div>
+    <div class="eyebrow">The Problem</div>
+    <h2 class="section-title">What no one tells you <em>before you arrive</em></h2>
+    <p class="section-body">International students are recruited through narratives of opportunity and multiculturalism — a framework that often obscures Canada's colonial history and the realities of settler identity.</p>
+    <div class="reality-cards">
+      <div class="reality-card">
+        <div class="reality-icon">🗺️</div>
+        <div><h4>Unknown Colonial History</h4><p>Students arrive with no awareness of the land they're settling on or Indigenous peoples' ongoing relationship to it.</p></div>
+      </div>
+      <div class="reality-card">
+        <div class="reality-icon">📣</div>
+        <div><h4>Misleading Recruitment</h4><p>Agencies provide positive narratives devoid of historical context, housing realities, or settler responsibilities.</p></div>
+      </div>
+      <div class="reality-card">
+        <div class="reality-icon">💔</div>
+        <div><h4>Identity Shock After Arrival</h4><p>Students discover too late that they are settlers — experiencing distress, isolation, and the sensation of having been deceived.</p></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="vs-table">
+      <div class="vs-header">
+        <div class="vs-col expect">What You're Told</div>
+        <div class="vs-col reality">What You Find</div>
+      </div>
+      <div class="vs-row"><div class="vs-cell expect">Economic opportunities everywhere</div><div class="vs-cell reality">Financial & housing challenges</div></div>
+      <div class="vs-row"><div class="vs-cell expect">Welcoming multicultural country</div><div class="vs-cell reality">Cultural isolation & rising discrimination</div></div>
+      <div class="vs-row"><div class="vs-cell expect">Bright, certain future</div><div class="vs-cell reality">Immigration uncertainty</div></div>
+      <div class="vs-row"><div class="vs-cell expect">Acceptance everywhere</div><div class="vs-cell reality">Discovering your role as a settler</div></div>
+    </div>
+    <div class="pull-quote">"What happens when you find yourself alone, navigating a new settler identity in a new country with many other challenges?"</div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution" id="solution">
+  <div class="solution-header">
+    <div class="eyebrow" style="justify-content:center">Our Solution</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">A Truth-Based, <em>Indigenous Informed</em> Support Platform</h2>
+    <p style="color:rgba(245,240,232,0.55);font-size:0.95rem;line-height:1.8;margin-top:1rem">Three interconnected pillars that support every international student — before and after arrival.</p>
+  </div>
+  <div class="three-pillars">
+    <div class="pillar k">
+      <div class="pillar-number">01</div>
+      <div class="pillar-icon">📚</div>
+      <h3>Knowledge Hub</h3>
+      <p>Honest, verified information about Canada's history and what it truly means to arrive as a settler on Indigenous land.</p>
+      <ul><li>Historical realities of colonization</li><li>Settlement preparation resources</li><li>Indigenous awareness content</li><li>Student rights & responsibilities</li><li>Housing & community resources</li></ul>
+    </div>
+    <div class="pillar c">
+      <div class="pillar-number">02</div>
+      <div class="pillar-icon">🤝</div>
+      <h3>Connection Hub</h3>
+      <p>Build meaningful relationships with peers, mentors, and Indigenous community members who share their lived experiences.</p>
+      <ul><li>Peer support networks</li><li>Senior student mentors</li><li>Indigenous community engagement</li><li>Educational institution links</li></ul>
+    </div>
+    <div class="pillar s">
+      <div class="pillar-number">03</div>
+      <div class="pillar-icon">🛡️</div>
+      <h3>Support Network</h3>
+      <p>Continuous guidance from before you land to long after you've settled — so you're never left to figure it out alone.</p>
+      <ul><li>Continuous guidance</li><li>Before and after arrival</li><li>Trusted, centralized information</li><li>Early intervention programs</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey">
+  <div class="eyebrow" style="justify-content:center">The Transformation</div>
+  <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.8rem)">From confusion to <em>thriving</em></h2>
+  <div class="journey-flow">
+    <div class="journey-step"><div class="step-dot before">✗</div><div class="step-label">Before</div><div class="step-value">Confused</div></div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step"><div class="step-dot before">✗</div><div class="step-label">Before</div><div class="step-value">Alone</div></div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step"><div class="step-dot before">✗</div><div class="step-label">Before</div><div class="step-value">Vulnerable</div></div>
+    <div class="journey-divider"></div>
+    <div class="journey-step"><div class="step-dot after">✓</div><div class="step-label">After</div><div class="step-value">Informed</div></div>
+    <div class="journey-arrow" style="color:rgba(212,168,67,0.4)">→</div>
+    <div class="journey-step"><div class="step-dot after">✓</div><div class="step-label">After</div><div class="step-value">Connected</div></div>
+    <div class="journey-arrow" style="color:rgba(212,168,67,0.4)">→</div>
+    <div class="journey-step"><div class="step-dot after">✓</div><div class="step-label">After</div><div class="step-value">Grounded</div></div>
+    <div class="journey-arrow" style="color:rgba(212,168,67,0.4)">→</div>
+    <div class="journey-step"><div class="step-dot after">★</div><div class="step-label">After</div><div class="step-value">Thriving</div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Ready to start your <em>informed journey</em> to Canada?</h2>
+  <div class="cta-group">
+    <a href="orientation.html" class="btn-primary">Begin Orientation →</a>
+    <small>Free for all international students</small>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Grounded on Land</div>
+  <p class="footer-note">We acknowledge that Canada is built upon the unceded, traditional territories of many First Nations, Métis, and Inuit peoples.</p>
+  <div class="footer-links">
+    <a href="orientation.html">Orientation</a>
+    <a href="map.html">Land Map</a>
+    <a href="#">For Agencies</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grounded on Land — Orientation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: var(--mid); }
+
+    /* ── HERO ── */
+    .ori-hero {
+      min-height: 55vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 8rem 6rem 4rem; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #1a0a3a 0%, #3d1f8a 35%, #6b35c9 65%, #2d1b69 100%);
+    }
+    .ori-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(212,168,67,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,168,67,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .ori-hero-content { position: relative; z-index: 2; max-width: 55rem; }
+    .ori-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900; line-height: 1.05; margin-bottom: 1rem;
+    }
+    .ori-hero h1 em { font-style: italic; font-weight: 300; color: var(--gold); }
+    .ori-hero p { font-size: 1rem; line-height: 1.7; color: rgba(245,240,232,0.6); max-width: 40rem; }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 6rem; position: sticky; top: 68px; z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    .progress-steps { display: flex; overflow-x: auto; }
+    .p-step {
+      padding: 1.2rem 2rem; display: flex; align-items: center; gap: 0.7rem;
+      font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(245,240,232,0.35); border-bottom: 2px solid transparent;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s; text-decoration: none;
+    }
+    .p-step:hover { color: rgba(245,240,232,0.7); }
+    .p-step.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .p-step.done   { color: var(--teal); }
+    .step-n {
+      width: 1.6rem; height: 1.6rem; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
+    }
+    .p-step.active .step-n { background: var(--gold); color: var(--ink); }
+    .p-step.done .step-n   { background: var(--teal); color: var(--cream); }
+
+    /* ── BODY LAYOUT ── */
+    .ori-body {
+      max-width: 1280px; margin: 0 auto;
+      padding: 4rem 6rem 6rem;
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 4rem; align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 160px; }
+    .sidebar-section { margin-bottom: 2.5rem; }
+    .sidebar-label {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,240,232,0.3); margin-bottom: 0.8rem;
+    }
+    .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar ul li a {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.5rem 0.8rem; font-size: 0.83rem;
+      color: rgba(245,240,232,0.5); text-decoration: none;
+      border-radius: 3px; transition: all 0.2s;
+      border-left: 2px solid transparent;
+    }
+    .sidebar ul li a:hover { color: var(--cream); background: rgba(255,255,255,0.03); }
+    .sidebar ul li a.active { color: var(--gold); border-left-color: var(--gold); background: rgba(212,168,67,0.05); }
+    .progress-ring { width: 80px; height: 80px; margin: 0 auto 0.5rem; }
+    .progress-ring text { font-family: 'Fraunces', serif; fill: var(--gold); font-size: 22px; font-weight: 900; }
+    .progress-ring .bg { stroke: rgba(255,255,255,0.08); }
+    .progress-ring .fg { stroke: var(--gold); stroke-linecap: round; stroke-dasharray: 201; stroke-dashoffset: 100; transition: stroke-dashoffset 1s ease; }
+    .support-box {
+      padding: 1.2rem; margin-top: 1rem;
+      background: rgba(14,107,107,0.1);
+      border: 1px solid rgba(14,107,107,0.25); border-radius: 4px;
+    }
+    .support-box .label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .support-box p { font-size: 0.8rem; color: rgba(245,240,232,0.5); line-height: 1.6; margin-bottom: 0.8rem; }
+    .support-box a { font-size: 0.78rem; color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(14,107,107,0.4); }
+
+    /* ── MODULES ── */
+    .content-area h2 { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .content-area h2 em { font-style: italic; font-weight: 300; color: var(--gold); }
+    .module-intro { font-size: 0.95rem; line-height: 1.8; color: rgba(245,240,232,0.55); margin-bottom: 3rem; max-width: 42rem; }
+    .modules { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .module {
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+      overflow: hidden; transition: all 0.3s; cursor: pointer;
+    }
+    .module:hover { border-color: rgba(212,168,67,0.3); transform: translateX(4px); }
+    .module-header {
+      padding: 1.8rem 2rem; display: flex; align-items: center; gap: 1.5rem;
+      background: rgba(255,255,255,0.03);
+    }
+    .module-status {
+      width: 2.8rem; height: 2.8rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1rem;
+    }
+    .module-status.locked   { background: rgba(255,255,255,0.06); color: rgba(245,240,232,0.25); }
+    .module-status.available{ background: rgba(212,168,67,0.12); border: 1px solid rgba(212,168,67,0.4); color: var(--gold); }
+    .module-status.complete { background: rgba(14,107,107,0.2); border: 1px solid rgba(14,107,107,0.5); color: var(--teal); }
+    .module-info { flex: 1; }
+    .module-tag { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.3); margin-bottom: 0.2rem; }
+    .module-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .module-desc { font-size: 0.82rem; color: rgba(245,240,232,0.45); line-height: 1.5; }
+    .module-meta { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+    .module-time { font-size: 0.75rem; color: rgba(245,240,232,0.3); }
+    .module-btn {
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.5rem 1.2rem; border-radius: 2px; border: none;
+      cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+    }
+    .module-btn.start  { background: var(--gold); color: var(--ink); }
+    .module-btn.start:hover { opacity: 0.85; }
+    .module-btn.locked { background: rgba(255,255,255,0.06); color: rgba(245,240,232,0.2); cursor: default; }
+    .module-btn.review { background: rgba(14,107,107,0.2); color: var(--teal); border: 1px solid rgba(14,107,107,0.3); }
+
+    .module-body {
+      display: none; padding: 0 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.15);
+    }
+    .module.open .module-body { display: block; padding-top: 1.5rem; }
+    .module-body p { font-size: 0.9rem; line-height: 1.8; color: rgba(245,240,232,0.6); margin-bottom: 1.2rem; }
+
+    .lesson-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+    .lesson-list li {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 0.85rem; color: rgba(245,240,232,0.55);
+      padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.02); border-radius: 3px;
+    }
+    .l-icon {
+      width: 1.6rem; height: 1.6rem; background: rgba(212,168,67,0.1);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 0.65rem; flex-shrink: 0;
+    }
+    .pull-quote {
+      margin: 2.5rem 0; padding: 2rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(212,168,67,0.04); border-radius: 0 4px 4px 0;
+    }
+    .pull-quote blockquote {
+      font-family: 'Fraunces', serif; font-size: 1.2rem;
+      font-style: italic; font-weight: 300; line-height: 1.6;
+      color: rgba(245,240,232,0.8); margin-bottom: 0.5rem;
+    }
+    .pull-quote cite { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.35); }
+
+    /* ── STAKEHOLDER ── */
+    .stakeholder-section { margin-top: 3rem; }
+    .stakeholder-section h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .stakeholder-section > p { font-size: 0.85rem; color: rgba(245,240,232,0.5); margin-bottom: 1.5rem; line-height: 1.7; }
+    .stakeholder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .s-card {
+      padding: 1.2rem; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; text-align: center;
+    }
+    .s-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .s-card h4 { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .s-card p { font-size: 0.75rem; color: rgba(245,240,232,0.35); line-height: 1.4; }
+
+    /* ── CERT ── */
+    .cert-section {
+      margin-top: 4rem; padding: 2.5rem;
+      background: linear-gradient(135deg, rgba(45,27,105,0.3), rgba(14,107,107,0.15));
+      border: 1px solid rgba(212,168,67,0.2); border-radius: 6px;
+      display: flex; gap: 2rem; align-items: center;
+    }
+    .cert-icon { font-size: 3.5rem; flex-shrink: 0; }
+    .cert-section h3 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .cert-section p { font-size: 0.85rem; color: rgba(245,240,232,0.55); line-height: 1.7; margin-bottom: 1rem; }
+    .cert-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+    .cert-checklist li { font-size: 0.82rem; color: rgba(245,240,232,0.45); display: flex; gap: 0.5rem; }
+    .cert-checklist li::before { content: '◦'; color: var(--gold); }
+
+    .next-module {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: rgba(212,168,67,0.07); border: 1px solid rgba(212,168,67,0.2);
+      border-radius: 4px; margin-top: 2.5rem; text-decoration: none; transition: all 0.25s;
+    }
+    .next-module:hover { background: rgba(212,168,67,0.12); }
+    .next-module p { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+    .next-module h4 { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--cream); }
+    .next-module span { font-size: 1.4rem; color: var(--gold); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .module { animation: fadeUp 0.5s ease both; }
+    .module:nth-child(1){animation-delay:0.05s} .module:nth-child(2){animation-delay:0.1s}
+    .module:nth-child(3){animation-delay:0.15s} .module:nth-child(4){animation-delay:0.2s}
+    .module:nth-child(5){animation-delay:0.25s}
+
+    @media (max-width: 1024px) {
+      .ori-body { grid-template-columns: 1fr; padding: 2.5rem 2rem; }
+      .sidebar { position: static; }
+      .progress-bar { padding: 0 2rem; }
+      .ori-hero { padding: 8rem 2.5rem 3rem; }
+      .stakeholder-grid { grid-template-columns: repeat(2, 1fr); }
+      .cert-section { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Grounded <span>on Land</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="orientation.html" class="active">Orientation</a></li>
+    <li><a href="map.html">Land Map</a></li>
+    <li><a href="#">For Agencies</a></li>
+  </ul>
+  <a href="map.html" class="nav-cta">Explore Map</a>
+</nav>
+
+<!-- HERO -->
+<section class="ori-hero">
+  <div class="ori-hero-grid"></div>
+  <div class="ori-hero-content">
+    <div class="eyebrow">Pre-Arrival Orientation Program</div>
+    <h1>Your guided journey<br><em>before you land</em></h1>
+    <p>Five modules designed to ground you in truth — the history of the land, your role as a newcomer, and how to build meaningful community connections.</p>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <div class="progress-steps">
+    <a href="#" class="p-step done"><span class="step-n">✓</span> Land & History</a>
+    <a href="#" class="p-step active"><span class="step-n">2</span> Settler Identity</a>
+    <a href="#" class="p-step"><span class="step-n">3</span> Community</a>
+    <a href="#" class="p-step"><span class="step-n">4</span> Rights & Housing</a>
+    <a href="#" class="p-step"><span class="step-n">5</span> Certification</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="ori-body">
+  <aside class="sidebar">
+    <div style="text-align:center;margin-bottom:1.5rem">
+      <svg class="progress-ring" viewBox="0 0 72 72">
+        <circle class="bg" cx="36" cy="36" r="32" fill="none" stroke-width="4"/>
+        <circle class="fg" cx="36" cy="36" r="32" fill="none" stroke-width="4" transform="rotate(-90 36 36)"/>
+        <text x="36" y="42" text-anchor="middle">50%</text>
+      </svg>
+      <div style="font-size:0.75rem;color:rgba(245,240,232,0.35);letter-spacing:0.1em;text-transform:uppercase">Progress</div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <ul>
+        <li><a href="#" class="active">🌿 Land & History</a></li>
+        <li><a href="#">🪪 Settler Identity</a></li>
+        <li><a href="#">🤝 Community</a></li>
+        <li><a href="#">🏠 Rights & Housing</a></li>
+        <li><a href="#">🏅 Certification</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Quick Links</div>
+      <ul>
+        <li><a href="map.html">→ Land Map</a></li>
+        <li><a href="#">→ Knowledge Hub</a></li>
+        <li><a href="#">→ Peer Mentors</a></li>
+      </ul>
+    </div>
+    <div class="support-box">
+      <div class="label">Need Support?</div>
+      <p>Connect with a peer mentor who's been in your shoes.</p>
+      <a href="#">Find a mentor →</a>
+    </div>
+  </aside>
+
+  <div class="content-area">
+    <h2>Orientation <em>Modules</em></h2>
+    <p class="module-intro">Complete each module at your own pace before arriving in Canada. Each section is designed to be honest, respectful, and genuinely useful — not just a checkbox.</p>
+    <div class="modules">
+
+      <div class="module open" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-status complete">✓</div>
+          <div class="module-info">
+            <div class="module-tag">Module 1 · Completed</div>
+            <div class="module-title">The Land You're Coming To</div>
+            <div class="module-desc">Understanding Indigenous territories, history, and the significance of the land</div>
+          </div>
+          <div class="module-meta"><div class="module-time">⏱ 45 min</div><button class="module-btn review">Review</button></div>
+        </div>
+        <div class="module-body">
+          <p>Canada is home to over 600 distinct First Nations, Métis, and Inuit communities, each with their own languages, traditions, and deep connections to specific territories.</p>
+          <ul class="lesson-list">
+            <li><span class="l-icon">▶</span> Introduction to Indigenous Peoples of Canada (12 min)</li>
+            <li><span class="l-icon">▶</span> What is a Land Acknowledgement? (8 min)</li>
+            <li><span class="l-icon">📄</span> Reading: The History of Treaties (15 min)</li>
+            <li><span class="l-icon">🗺️</span> Interactive: Your City's Territory Map (10 min)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module open" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-status available">◈</div>
+          <div class="module-info">
+            <div class="module-tag">Module 2 · In Progress</div>
+            <div class="module-title">Understanding Your Role as a Settler</div>
+            <div class="module-desc">What it means to arrive as a newcomer on Indigenous territory</div>
+          </div>
+          <div class="module-meta"><div class="module-time">⏱ 55 min</div><button class="module-btn start">Continue</button></div>
+        </div>
+        <div class="module-body">
+          <p>This module addresses something many students discover only after arrival: that coming to Canada means arriving as a settler on land with a complex, ongoing colonial history.</p>
+          <div class="pull-quote">
+            <blockquote>"What happens when you find yourself alone, navigating a new settler identity in a new country with many other challenges?"</blockquote>
+            <cite>— Grounded on Land Research, 2026</cite>
+          </div>
+          <ul class="lesson-list">
+            <li><span class="l-icon">▶</span> What is Settler Colonialism? (14 min)</li>
+            <li><span class="l-icon">▶</span> Your Responsibilities as a Newcomer (10 min)</li>
+            <li><span class="l-icon">💬</span> Recorded Story: International Student Experience</li>
+            <li><span class="l-icon">✏️</span> Reflection Exercise: Your Expectations vs Reality</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-status available">◈</div>
+          <div class="module-info">
+            <div class="module-tag">Module 3 · Available</div>
+            <div class="module-title">Building Genuine Community</div>
+            <div class="module-desc">Connecting with Indigenous communities, peer networks, and mentors</div>
+          </div>
+          <div class="module-meta"><div class="module-time">⏱ 40 min</div><button class="module-btn start">Start</button></div>
+        </div>
+        <div class="module-body">
+          <p>Isolation is one of the biggest challenges international students face. This module introduces you to the support networks available.</p>
+          <ul class="lesson-list">
+            <li><span class="l-icon">▶</span> Indigenous Community Engagement (18 min)</li>
+            <li><span class="l-icon">▶</span> Finding Your Peer Mentor (8 min)</li>
+            <li><span class="l-icon">📄</span> Resource Guide: Community Organizations</li>
+            <li><span class="l-icon">🤝</span> Action: Connect with a Senior Student</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-status locked">🔒</div>
+          <div class="module-info">
+            <div class="module-tag">Module 4 · Locked</div>
+            <div class="module-title">Your Rights, Housing & Practical Life</div>
+            <div class="module-desc">Honest realities of housing, finances, immigration, and student life</div>
+          </div>
+          <div class="module-meta"><div class="module-time">⏱ 50 min</div><button class="module-btn locked" disabled>Locked</button></div>
+        </div>
+        <div class="module-body"><p>Complete Modules 1–3 to unlock this section.</p></div>
+      </div>
+
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-status locked">🔒</div>
+          <div class="module-info">
+            <div class="module-tag">Module 5 · Certification</div>
+            <div class="module-title">Grounded on Land Certification</div>
+            <div class="module-desc">Complete all modules and receive your certificate</div>
+          </div>
+          <div class="module-meta"><div class="module-time">⏱ 20 min</div><button class="module-btn locked" disabled>Locked</button></div>
+        </div>
+        <div class="module-body"></div>
+      </div>
+
+    </div><!-- /modules -->
+
+    <div class="stakeholder-section">
+      <h3>Your <em style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:var(--gold)">Support Ecosystem</em></h3>
+      <p>Multiple institutions and communities are part of your path.</p>
+      <div class="stakeholder-grid">
+        <div class="s-card"><div class="s-icon">🏛️</div><h4>Educational Institution</h4><p>Your primary gateway to campus life</p></div>
+        <div class="s-card"><div class="s-icon">🏡</div><h4>Indigenous Community</h4><p>The peoples whose territory you arrive on</p></div>
+        <div class="s-card"><div class="s-icon">🏛️</div><h4>Provincial Government</h4><p>Policy, rights, settlement support</p></div>
+        <div class="s-card"><div class="s-icon">👨‍👩‍👧</div><h4>Family</h4><p>Your home support network</p></div>
+        <div class="s-card"><div class="s-icon">🏢</div><h4>Local Businesses</h4><p>Community economic connections</p></div>
+        <div class="s-card"><div class="s-icon">🛂</div><h4>IRCC</h4><p>Immigration, Refugees & Citizenship Canada</p></div>
+      </div>
+    </div>
+
+    <div class="cert-section">
+      <div class="cert-icon">🏅</div>
+      <div>
+        <h3>Earn Your Grounded on Land Certificate</h3>
+        <p>Complete all 5 modules to receive certification recognizing your commitment to informed, respectful settlement.</p>
+        <ul class="cert-checklist">
+          <li>Recognized by partner educational institutions</li>
+          <li>Demonstrates commitment to reconciliation</li>
+          <li>Included in agency certification programs</li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="map.html" class="next-module">
+      <div>
+        <p>Next Resource</p>
+        <h4>Explore the Land Map — see whose territory you'll be living on</h4>
+      </div>
+      <span>→</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  function toggleModule(el) {
+    if (el.querySelector('.module-status.locked') && !el.classList.contains('open')) return;
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
